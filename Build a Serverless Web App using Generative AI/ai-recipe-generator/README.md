@@ -113,8 +113,8 @@ In this task, you will create a React application and deploy it to the Cloud usi
 In this step, you will create a GitHub repository and commit your code to it.
 
 1. Sign in to GitHub at [GitHub](https://github.com/).
-   
 2. Create a new repository:
+
    - For **Repository name**, enter `ai-recipe-generator`.
    - Choose the **Public** radio button.
    - Select **Create a new repository**.
@@ -195,7 +195,8 @@ In this task, you will configure **Amplify Auth** for user authentication and en
      loginWith: {
        email: {
          verificationEmailStyle: "CODE",
-         verificationEmailSubject: "Welcome to the AI-Powered Recipe Generator!",
+         verificationEmailSubject:
+           "Welcome to the AI-Powered Recipe Generator!",
          verificationEmailBody: (createCode) =>
            `Use this code to confirm your account: ${createCode()}`,
        },
@@ -254,10 +255,12 @@ In this task, you will use **AWS Amplify** and **AWS Lambda** to build a serverl
    ```js
    export function request(ctx) {
      const { ingredients = [] } = ctx.args;
-   
+
      // Construct the prompt with the provided ingredients
-     const prompt = `Suggest a recipe idea using these ingredients: ${ingredients.join(", ")}.`;
-   
+     const prompt = `Suggest a recipe idea using these ingredients: ${ingredients.join(
+       ", "
+     )}.`;
+
      // Return the request configuration
      return {
        resourcePath: `/model/anthropic.claude-3-sonnet-20240229-v1:0/invoke`,
@@ -284,16 +287,16 @@ In this task, you will use **AWS Amplify** and **AWS Lambda** to build a serverl
        },
      };
    }
-   
+
    export function response(ctx) {
      // Parse the response body
      const parsedBody = JSON.parse(ctx.result.body);
-   
+
      // Extract the text content from the response
      const res = {
        body: parsedBody.content[0].text,
      };
-   
+
      // Return the response
      return res;
    }
@@ -320,16 +323,17 @@ In this task, you will use **AWS Amplify** and **AWS Lambda** to build a serverl
      data,
    });
 
-   const bedrockDataSource = backend.data.resources.graphqlApi.addHttpDataSource(
-     "bedrockDS",
-     "https://bedrock-runtime.us-east-1.amazonaws.com",
-     {
-       authorizationConfig: {
-         signingRegion: "us-east-1",
-         signingServiceName: "bedrock",
-       },
-     }
-   );
+   const bedrockDataSource =
+     backend.data.resources.graphqlApi.addHttpDataSource(
+       "bedrockDS",
+       "https://bedrock-runtime.us-east-1.amazonaws.com",
+       {
+         authorizationConfig: {
+           signingRegion: "us-east-1",
+           signingServiceName: "bedrock",
+         },
+       }
+     );
 
    bedrockDataSource.grantPrincipal.addToPrincipalPolicy(
      new PolicyStatement({
@@ -626,7 +630,7 @@ Now, let’s build the main React component for the app. We’ll integrate the *
 
        try {
          const formData = new FormData(event.currentTarget);
-         
+
          const { data, errors } = await amplifyClient.queries.askBedrock({
            ingredients: [formData.get("ingredients")?.toString() || ""],
          });
@@ -726,7 +730,9 @@ Once you’ve confirmed that the app is working as expected locally, it’s time
    After deployment, you can access your live app at the provided Amplify URL.
 
    ![Deployed App]
-   ![alt text](AIDemo-1.gif)
+   ![alt text](<Images/Screenshot 2025-03-12 204826.png>)
+
+   ![alt text](Images/AIDemo.gif)
 
 ---
 
@@ -738,7 +744,6 @@ Once you’ve confirmed that the app is working as expected locally, it’s time
 ## **Conclusion**
 
 This project combines AWS Amplify, Amazon Bedrock, and AWS Cognito to build a scalable, AI-powered recipe generator. It highlights the potential of serverless applications with Generative AI, making it ideal for real-time, interactive user experiences.
-
 
 Explore my [GitHub repository.](https://github.com/MummanaPrabhat)
 
