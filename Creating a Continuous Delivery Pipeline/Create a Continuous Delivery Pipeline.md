@@ -503,6 +503,7 @@ You successfully built a continuous delivery pipeline on AWS! As a great next st
 
 The project demonstrates an efficient AWS Continuous Delivery pipeline that automates deployments from commit to production. By integrating CodePipeline, CodeBuild, and Elastic Beanstalk, development teams can focus on code quality and agility, resulting in faster releases and robust application performance.
 
+The forked repo  https://github.com/MummanaPrabhat/aws-elastic-beanstalk-express-js-sample.git
 
 Explore my [GitHub repository.](https://github.com/MummanaPrabhat)
 
