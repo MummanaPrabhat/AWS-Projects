@@ -1,4 +1,4 @@
-##  Deploying a Complete Machine Learning Fraud Detection Solution Using Amazon SageMaker : AWS Project
+## Deploying a Complete Machine Learning Fraud Detection Solution Using Amazon SageMaker : AWS Project
 
 ### Introduction
 
@@ -8,57 +8,57 @@ This project leverages Amazon SageMaker and key AWS services to build a scalable
 
 This solution leverages a range of AWS services, each playing a crucial role in creating a scalable, secure, and responsive machine learning infrastructure:
 
-* **Amazon SageMaker**: Core platform for model training, deployment, and hosting.
+- **Amazon SageMaker**: Core platform for model training, deployment, and hosting.
 
-* **AWS Lambda**: Automates resource creation, orchestrates SageMaker integrations, and handles infrastructure setup.
+- **AWS Lambda**: Automates resource creation, orchestrates SageMaker integrations, and handles infrastructure setup.
 
-* **Amazon S3**: Stores training data, model artifacts, and log files.
+- **Amazon S3**: Stores training data, model artifacts, and log files.
 
-* **AWS IAM**: Manages access control with defined roles and policies.
+- **AWS IAM**: Manages access control with defined roles and policies.
 
-* **Amazon EC2 and VPC**: Provides network isolation and backend processing capabilities.
+- **Amazon EC2 and VPC**: Provides network isolation and backend processing capabilities.
 
-* **Amazon CloudWatch**: Enables monitoring and alerting for various system components.
+- **Amazon CloudWatch**: Enables monitoring and alerting for various system components.
 
-* **Amazon SQS**: Manages asynchronous task queues for inter-service communication.
+- **Amazon SQS**: Manages asynchronous task queues for inter-service communication.
 
 **Additional Services**:
 
-* **AWS Secrets Manager**: Safeguards sensitive information such as API keys.
+- **AWS Secrets Manager**: Safeguards sensitive information such as API keys.
 
-* **AWS CloudTrail**: Tracks account activity and resource changes.
+- **AWS CloudTrail**: Tracks account activity and resource changes.
 
-* **Amazon Route 53**: Manages domain name resolution for the API endpoint.
+- **Amazon Route 53**: Manages domain name resolution for the API endpoint.
 
-* **AWS Systems Manager (SSM)**: Provides parameter management and infrastructure automation.
+- **AWS Systems Manager (SSM)**: Provides parameter management and infrastructure automation.
 
-* **Amazon API Gateway**: Exposes model predictions as RESTful APIs.
+- **Amazon API Gateway**: Exposes model predictions as RESTful APIs.
 
-* **Amazon SNS**: Sends alerts and notifications based on specific events.
+- **Amazon SNS**: Sends alerts and notifications based on specific events.
 
-* **Amazon CloudFormation**: Automates infrastructure provisioning.
+- **Amazon CloudFormation**: Automates infrastructure provisioning.
 
 ### Prerequisites
 
 Before beginning, ensure you have:
 
- 1. **Basic AWS Knowledge**: Familiarity with Amazon SageMaker, IAM, Lambda, and S3.
+1.  **Basic AWS Knowledge**: Familiarity with Amazon SageMaker, IAM, Lambda, and S3.
 
- 2. **Python and ML Basics**: Knowledge of Python for model training and AWS SDK integration.
+2.  **Python and ML Basics**: Knowledge of Python for model training and AWS SDK integration.
 
- 3. **AWS CLI and SDKs**: Installed and configured for seamless AWS service management.
+3.  **AWS CLI and SDKs**: Installed and configured for seamless AWS service management.
 
- 4. **IAM Permissions**: Appropriate permissions to interact with SageMaker, S3, Lambda, and other services used in the project.
+4.  **IAM Permissions**: Appropriate permissions to interact with SageMaker, S3, Lambda, and other services used in the project.
 
 ### Problem Statement or Use Case
 
 Detecting fraudulent transactions is a challenge for financial institutions due to the high volume and complexity of real-time data. Fraud detection models need to be scalable, secure, and capable of integrating seamlessly with backend systems to process transactions in real-time. This project addresses these needs by developing a machine learning-based fraud detection model that:
 
-* **Learns and Identifies Fraud Patterns**: Uses machine learning to analyze transaction data and classify transactions as legitimate or suspicious.
+- **Learns and Identifies Fraud Patterns**: Uses machine learning to analyze transaction data and classify transactions as legitimate or suspicious.
 
-* **Ensures Scalability and Efficiency**: Deploys a highly scalable, serverless architecture using SageMaker and Lambda.
+- **Ensures Scalability and Efficiency**: Deploys a highly scalable, serverless architecture using SageMaker and Lambda.
 
-* **Enables Real-Time Monitoring and Notifications**: Implements CloudWatch, CloudTrail, and SNS for tracking and alerting on model performance and anomalies.
+- **Enables Real-Time Monitoring and Notifications**: Implements CloudWatch, CloudTrail, and SNS for tracking and alerting on model performance and anomalies.
 
 The solution is ideal for large-scale fraud detection in production environments, enabling real-time insights with minimal manual intervention.
 
@@ -80,21 +80,21 @@ Download the CloudFormation template to your local computer:
 
 ## [Within your AWS account](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/22-selfpaced/cloudformation#within-your-aws-account)
 
- 1. Navigate to [AWS CloudFormation ](https://console.aws.amazon.com/cloudformation/home#/stacks/create/template)(AWS Console) to create a new stack.
+1.  Navigate to [AWS CloudFormation ](https://console.aws.amazon.com/cloudformation/home#/stacks/create/template)(AWS Console) to create a new stack.
 
- 2. On **Create stack** screen, under the **Specify a template** section, select **Upload a template file** option and navigate to select fraud-detection-workshop-selfpaced.yml file you downloaded earlier. Click **Next**.
+2.  On **Create stack** screen, under the **Specify a template** section, select **Upload a template file** option and navigate to select fraud-detection-workshop-selfpaced.yml file you downloaded earlier. Click **Next**.
 
 ![](https://cdn-images-1.medium.com/max/2526/0*EBwt0WucGmGkO_Bj.png)
 
- 1. On **Specify stack details** screen, under the **Stack name** section, provide a name for the CloudFormation stack such as fraud-detection-workshop.
+1.  On **Specify stack details** screen, under the **Stack name** section, provide a name for the CloudFormation stack such as fraud-detection-workshop.
 
- 2. Leave the rest of the parameters unchanged, and click **Next**
+2.  Leave the rest of the parameters unchanged, and click **Next**
 
 ![](https://cdn-images-1.medium.com/max/2000/0*_119NbBqQfc3DtUp.png)
 
- 1. On the **Configure stack options** screen, leave default parameters unchanged, scroll to the bottom of the page, and click **Next**
+1.  On the **Configure stack options** screen, leave default parameters unchanged, scroll to the bottom of the page, and click **Next**
 
- 2. On the **Review fraud-detection-workshop** screen, scroll to the bottom of the page and check off the box “I acknowledge that AWS CloudFormation might create IAM resources.”. Click **Create Stack**.
+2.  On the **Review fraud-detection-workshop** screen, scroll to the bottom of the page and check off the box “I acknowledge that AWS CloudFormation might create IAM resources.”. Click **Create Stack**.
 
 ![](https://cdn-images-1.medium.com/max/2076/0*UG6pF6yxRmFHtgIx.png)
 
@@ -108,57 +108,57 @@ Click “Next” to go to the next section.
 
 In this section, we’re going to go through a quick overview of the workshop and check if everything is set up correctly.
 
-* [Workshop Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#workshop-overview)
+- [Workshop Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#workshop-overview)
 
-* [Verify SageMaker Studio is ready](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#verify-sagemaker-studio-is-ready)
+- [Verify SageMaker Studio is ready](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#verify-sagemaker-studio-is-ready)
 
-* [Explanation of the code files](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#explanation-of-the-code-files)
+- [Explanation of the code files](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#explanation-of-the-code-files)
 
-* [Explanation of the data files](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#explanation-of-the-data-files)
+- [Explanation of the data files](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#explanation-of-the-data-files)
 
-* [Explanation of helper scripts](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#explanation-of-helper-scripts)
+- [Explanation of helper scripts](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#explanation-of-helper-scripts)
 
 ## [Workshop Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#workshop-overview)
 
 In this workshop we will -
 
-* **Explore, clean, visualize and prepare the data**: This step is all about understanding the auto insurance claims data.
+- **Explore, clean, visualize and prepare the data**: This step is all about understanding the auto insurance claims data.
 
-* **Select & engineer features**: Here we will get acquainted with Amazon SageMaker Feature Store.
+- **Select & engineer features**: Here we will get acquainted with Amazon SageMaker Feature Store.
 
-* **Build and train a model**: Train your model through the SageMaker API.
+- **Build and train a model**: Train your model through the SageMaker API.
 
-* **Deployment & Inference**: Learn to deploy your model through quick commands for Real-time inference.
+- **Deployment & Inference**: Learn to deploy your model through quick commands for Real-time inference.
 
-* **(Bonus) Transform data visually**: Learn to transform and visualize data through Amazon SageMaker DataWrangler.
+- **(Bonus) Transform data visually**: Learn to transform and visualize data through Amazon SageMaker DataWrangler.
 
-* **(Bonus) Detect bias in the dataset**: Learn to use Amazon SageMaker Clarify to detect bias in a bonus lab.
+- **(Bonus) Detect bias in the dataset**: Learn to use Amazon SageMaker Clarify to detect bias in a bonus lab.
 
-* **(Bonus) Batch transforms**: Learn to batch inference requests and use SageMaker Batch Transforms.
+- **(Bonus) Batch transforms**: Learn to batch inference requests and use SageMaker Batch Transforms.
 
-* **Finally**, put everything together into a production CI/CD pipeline using Amazon SageMaker Pipelines
+- **Finally**, put everything together into a production CI/CD pipeline using Amazon SageMaker Pipelines
 
 We are going to make use of three core jupyter notebooks.
 
- 1. The first notebook (Lab_1_and_2-Data-Exploration-and-Features.ipynb) demonstrates Exploratory Data Analysis (EDA). Specifically, data visualization, manipulation and transformation through Pandas and Seaborn python libraries. It will then walk you through feature engineering and getting the data ready for training.
+1.  The first notebook (Lab_1_and_2-Data-Exploration-and-Features.ipynb) demonstrates Exploratory Data Analysis (EDA). Specifically, data visualization, manipulation and transformation through Pandas and Seaborn python libraries. It will then walk you through feature engineering and getting the data ready for training.
 
- 2. The second notebook (Lab_3_and_4-Training_and_Deployment.ipynb) demonstrates training and deployment of the model followed by validation of the predictions using a subset of the data. Once deployed, the next step shows how to get predictions from the model.
+2.  The second notebook (Lab_3_and_4-Training_and_Deployment.ipynb) demonstrates training and deployment of the model followed by validation of the predictions using a subset of the data. Once deployed, the next step shows how to get predictions from the model.
 
- 3. The third notebook (Lab_5-Pipelines.ipynb) showcases a pipeline which integrates all previous steps. This is a good example on how to operationalize a Machine Learning Model into a production pipeline. This is a stand-alone lab which doesn't require executing the first two notebooks.
+3.  The third notebook (Lab_5-Pipelines.ipynb) showcases a pipeline which integrates all previous steps. This is a good example on how to operationalize a Machine Learning Model into a production pipeline. This is a stand-alone lab which doesn't require executing the first two notebooks.
 
 ## [Verify SageMaker Studio is ready](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#verify-sagemaker-studio-is-ready)
 
- 1. Navigate to [AWS console ](https://console.aws.amazon.com/)browser window and type SageMaker in the search bar at the top of the AWS console home page. Click on [Amazon SageMaker ](https://console.aws.amazon.com/sagemaker/home)service page in the AWS console.
+1.  Navigate to [AWS console ](https://console.aws.amazon.com/)browser window and type SageMaker in the search bar at the top of the AWS console home page. Click on [Amazon SageMaker ](https://console.aws.amazon.com/sagemaker/home)service page in the AWS console.
 
- 2. Click on the Studio link in the left navigation pane under Control Panel.
+2.  Click on the Studio link in the left navigation pane under Control Panel.
 
 ![](https://cdn-images-1.medium.com/max/2000/0*oRy8UUylVLhYMTwy.png)
 
- 1. Next, you should see a user is already setup for you. Click on “Open Studio”.
+1.  Next, you should see a user is already setup for you. Click on “Open Studio”.
 
 ![](https://cdn-images-1.medium.com/max/2000/0*xU_bfN-PFpgQNoyI.png)
 
- 1. This will open SageMaker Studio UI in new browser window.
+1.  This will open SageMaker Studio UI in new browser window.
 
 Attention
 
@@ -190,9 +190,9 @@ The target data exists in the data directory. Below is a list of files and their
 
 The outputs directory contains two files that contain data transformations. We will use these files in Lab 5.
 
-* claims_flow_template
+- claims_flow_template
 
-* customer_flow_template
+- customer_flow_template
 
 ## [Explanation of helper scripts](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/23-overviewoftheenvironment#explanation-of-helper-scripts)
 
@@ -216,19 +216,19 @@ If you already know how to execute Jupyter notebooks, skip this section.
 
 ## [Running Notebook cells](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/20-environmentsetup/24-jupyternotebook#running-notebook-cells)
 
- 1. When you open a notebook, you’ll see a popup that requires you to select a kernel and instance type. Please make sure that the Image is Data Science, Kernel is Python3 and Instance Type is ml.t3.medium as shown in the screenshot below.
+1.  When you open a notebook, you’ll see a popup that requires you to select a kernel and instance type. Please make sure that the Image is Data Science, Kernel is Python3 and Instance Type is ml.t3.medium as shown in the screenshot below.
 
 ![](https://cdn-images-1.medium.com/max/2000/0*C25beCgoggIDxK9I.png)
 
 **Note:** If for some reason, you see an error on capacity for this particular instance type, it’s okay to scale up and choose the next available instance type.
 
- 1. If you haven’t worked with Jupyter notebooks before, the following screenshots explains how to execute and run different cells.
+1.  If you haven’t worked with Jupyter notebooks before, the following screenshots explains how to execute and run different cells.
 
 ![](https://cdn-images-1.medium.com/max/2820/0*3ORutIDCrL9SwLFB.png)
 
 Clicking on the play button will execute the code within a selected cell.
 
- 1. If you see a * sign next to a cell, it means that cell is still being executed, and you should wait. Once it finishes it will show a number where the * was.
+1.  If you see a _ sign next to a cell, it means that cell is still being executed, and you should wait. Once it finishes it will show a number where the _ was.
 
 ![](https://cdn-images-1.medium.com/max/2000/0*4OSfATcPgrpYsWqP.png)
 
@@ -250,15 +250,15 @@ Note
 
 The following material provides contextual information about this lab. Please read through this information before you refer jupyter notebook for step-by-step code block instructions.
 
-* [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#overview)
+- [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#overview)
 
-* [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#instructions)
+- [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#instructions)
 
-* [Data Transformation](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#data-transformation)
+- [Data Transformation](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#data-transformation)
 
-* [Data Visualization](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#data-visualization)
+- [Data Visualization](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#data-visualization)
 
-* [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#conclusion)
+- [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#conclusion)
 
 ## [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/31-ingesttranformpreprocessjupyter#overview)
 
@@ -270,9 +270,9 @@ You will be working on the first notebook in the series Lab_1_and_2-Data-Explora
 
 **The steps are outlined below:**
 
- 1. Data visualization ~5m
+1.  Data visualization ~5m
 
- 2. Data transformation ~8m
+2.  Data transformation ~8m
 
 Total run time ~13 minutes
 
@@ -300,9 +300,9 @@ These columns will be one-hot encoded so that every type of collision can be a s
 
 Similarly, many transformations are required before the data can be used for Machine Learning. Data stakeholders often iterate over datasets multiple times before they can be used. In this case, transformations are created using Amazon SageMaker Data Wrangler (see the hint below). With this context in mind the following files are available:
 
- 1. The .flow templates named customer_flow_template and claims_flow_template. These templates contain the transformations on customer and claims dataset created through SageMaker Data Wrangler. These files are in the standard JSON format and can be read in using the python json module.
+1.  The .flow templates named customer_flow_template and claims_flow_template. These templates contain the transformations on customer and claims dataset created through SageMaker Data Wrangler. These files are in the standard JSON format and can be read in using the python json module.
 
- 2. These transformations are applied to the raw datasets. The final processed datasets are claims_preprocessed.csv and customers_preprocessed.csv. **The notebook starts off with these preprocessed datasets.**
+2.  These transformations are applied to the raw datasets. The final processed datasets are claims_preprocessed.csv and customers_preprocessed.csv. **The notebook starts off with these preprocessed datasets.**
 
 Hint
 
@@ -336,15 +336,15 @@ Prerequisite
 
 Please make sure Lab 1 is executed successfully before you proceed with this lab.
 
-* [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#overview)
+- [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#overview)
 
-* [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#instructions)
+- [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#instructions)
 
-* [Creating the Feature Store](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#creating-the-feature-store)
+- [Creating the Feature Store](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#creating-the-feature-store)
 
-* [Split the dataset and upload to S3](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#split-the-dataset-and-upload-to-s3)
+- [Split the dataset and upload to S3](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#split-the-dataset-and-upload-to-s3)
 
-* [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#conclusion)
+- [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#conclusion)
 
 ## [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/30-datapreparation/32-storefeaturesfeaturestore#overview)
 
@@ -358,11 +358,11 @@ In this lab, you will learn how to use Amazon SageMaker Feature Store to store a
 
 **The steps are outlined below:**
 
- 1. Creating the Feature Store ~6 min (including time to create and ingest data on Feature Store).
+1.  Creating the Feature Store ~6 min (including time to create and ingest data on Feature Store).
 
- 2. Visualize Feature Store ~2 min.
+2.  Visualize Feature Store ~2 min.
 
- 3. Upload data to S3 ~1 min.
+3.  Upload data to S3 ~1 min.
 
 Total run time ~10 minutes.
 
@@ -420,15 +420,15 @@ Prerequisite
 
 Please make sure Lab 2 is executed successfully before you proceed with this lab.
 
-* [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#overview)
+- [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#overview)
 
-* [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#instructions)
+- [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#instructions)
 
-* [Data Handling](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#data-handling)
+- [Data Handling](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#data-handling)
 
-* [Train a Model using XGBoost](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#train-a-model-using-xgboost)
+- [Train a Model using XGBoost](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#train-a-model-using-xgboost)
 
-* [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#conclusion)
+- [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#conclusion)
 
 ## [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/41-trainandtune#overview)
 
@@ -436,13 +436,13 @@ In this lab, you will learn how to use [Amazon SageMaker Training Job ](https://
 
 To train a model using SageMaker, you create a training job. The training job includes the following information:
 
-* The URL of the Amazon Simple Storage Service (Amazon S3) bucket where you’ve stored the training data.
+- The URL of the Amazon Simple Storage Service (Amazon S3) bucket where you’ve stored the training data.
 
-* The compute resources that you want SageMaker to use for model training. Compute resources are ML compute instances that are managed by SageMaker.
+- The compute resources that you want SageMaker to use for model training. Compute resources are ML compute instances that are managed by SageMaker.
 
-* The URL of the S3 bucket where you want to store the output of the job.
+- The URL of the S3 bucket where you want to store the output of the job.
 
-* The Amazon Elastic Container Registry path where the docker container image is stored.
+- The Amazon Elastic Container Registry path where the docker container image is stored.
 
 For this tutorial, you will use the [XGBoost Open Source Framework ](https://sagemaker.readthedocs.io/en/stable/frameworks/xgboost/xgboost.html)to train your model. This estimator is accessed via the SageMaker SDK, but mirrors the open source version of the [XGBoost Python package ](https://xgboost.readthedocs.io/en/latest/python/index.html). Any functionality provided by the XGBoost Python package can be implemented in your training script. XGBoost is an extremely popular, open-source package for gradient boosted trees. It is computationally powerful, fully featured, and has been successfully used in many machine learning competitions.
 
@@ -450,11 +450,11 @@ For this tutorial, you will use the [XGBoost Open Source Framework ](https://sag
 
 **The steps are outlined below:**
 
- 1. Data handling ~1m
+1.  Data handling ~1m
 
- 2. Train a model using XGBoost ~8m (including running the training code ~4m)
+2.  Train a model using XGBoost ~8m (including running the training code ~4m)
 
- 3. Deposit the model in SageMaker Model Registry ~3m
+3.  Deposit the model in SageMaker Model Registry ~3m
 
 Total run time ~ 12 mins.
 
@@ -462,9 +462,9 @@ Total run time ~ 12 mins.
 
 There are two ways to obtain the dataset:
 
- 1. Use the dataset you uploaded to Amazon S3 bucket in the previous Lab (Lab 2 — Feature Engineering).
+1.  Use the dataset you uploaded to Amazon S3 bucket in the previous Lab (Lab 2 — Feature Engineering).
 
- 2. Upload the following datasets from data folder to Amazon S3: train.csv, test.csv
+2.  Upload the following datasets from data folder to Amazon S3: train.csv, test.csv
 
 The following code upload the datasets from data folder to Amazon S3:
 
@@ -478,23 +478,23 @@ You will define SageMaker Estimator using [XGBoost Open Source Framework ](https
 
 For this example, we will use the following parameters for the XGBoost estimator:
 
-* entry_point - Path to the Python source file which should be executed as the entry point to training.
+- entry_point - Path to the Python source file which should be executed as the entry point to training.
 
-* hyperparameters - Hyperparameters that will be used for training. The hyperparameters are made accessible as a dict[str, str] to the training code on SageMaker.
+- hyperparameters - Hyperparameters that will be used for training. The hyperparameters are made accessible as a dict[str, str] to the training code on SageMaker.
 
-* output_path - S3 location for saving the training result (model artifacts and output files).
+- output_path - S3 location for saving the training result (model artifacts and output files).
 
-* framework_version - XGBoost version you want to use for executing your model training code.
+- framework_version - XGBoost version you want to use for executing your model training code.
 
-* instance_type - Type of EC2 instance to use for training.
+- instance_type - Type of EC2 instance to use for training.
 
 If you want to explore the breadth of functionality offered by the SageMaker XGBoost Framework you can read about all the configuration parameters by referencing the inheriting classes. The XGBoost class inherits from the Framework class and Framework inherits from the EstimatorBase class:
 
-* [XGBoost Estimator documentation](https://sagemaker.readthedocs.io/en/stable/frameworks/xgboost/xgboost.html#sagemaker.xgboost.estimator.XGBoost)
+- [XGBoost Estimator documentation](https://sagemaker.readthedocs.io/en/stable/frameworks/xgboost/xgboost.html#sagemaker.xgboost.estimator.XGBoost)
 
-* [Framework documentation](https://sagemaker.readthedocs.io/en/stable/api/training/estimators.html#sagemaker.estimator.Framework)
+- [Framework documentation](https://sagemaker.readthedocs.io/en/stable/api/training/estimators.html#sagemaker.estimator.Framework)
 
-* [EstimatorBase documentation](https://sagemaker.readthedocs.io/en/stable/api/training/estimators.html#sagemaker.estimator.EstimatorBase)
+- [EstimatorBase documentation](https://sagemaker.readthedocs.io/en/stable/api/training/estimators.html#sagemaker.estimator.EstimatorBase)
 
 Launching a training job and storing the trained model into S3 should take ~4 minutes. Notice that the output includes the value of Billable seconds, which is the amount of time you will be actually charged for.
 
@@ -528,23 +528,23 @@ Prerequisite
 
 Please make sure Lab 3 is executed successfully before you proceed with this lab.
 
-* [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/42-deploy#overview)
+- [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/42-deploy#overview)
 
-* [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/42-deploy#instructions)
+- [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/42-deploy#instructions)
 
-* [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/42-deploy#conclusion)
+- [Conclusion](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/42-deploy#conclusion)
 
 ## [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/40-traininganddeployment/42-deploy#overview)
 
 After you train your machine learning model, you can deploy it using Amazon SageMaker to get predictions in any of the following ways, depending on your use case:
 
-* For persistent, real-time endpoints that make one prediction at a time, use SageMaker real-time hosting services.
+- For persistent, real-time endpoints that make one prediction at a time, use SageMaker real-time hosting services.
 
-* Workloads that have idle periods between traffic spurts and can tolerate cold starts, use Serverless Inference.
+- Workloads that have idle periods between traffic spurts and can tolerate cold starts, use Serverless Inference.
 
-* Requests with large payload sizes up to 1GB, long processing times, and near real-time latency requirements, use Amazon SageMaker Asynchronous Inference.
+- Requests with large payload sizes up to 1GB, long processing times, and near real-time latency requirements, use Amazon SageMaker Asynchronous Inference.
 
-* To get predictions for an entire dataset, use SageMaker batch transform.
+- To get predictions for an entire dataset, use SageMaker batch transform.
 
 Following image describes different deployment options and their use cases.
 
@@ -554,13 +554,13 @@ Following image describes different deployment options and their use cases.
 
 **The steps are outlined below:**
 
-* Evaluate trained model and update status in the model registry: ~3 mins
+- Evaluate trained model and update status in the model registry: ~3 mins
 
-* Model deployment: ~1 min
+- Model deployment: ~1 min
 
-* Create/update endpoint: 5 mins
+- Create/update endpoint: 5 mins
 
-* Predictor interface: 1 mins
+- Predictor interface: 1 mins
 
 Total run time ~ 10 mins.
 
@@ -574,13 +574,13 @@ For the purpose of this lab, we will evaluate the model with test dataset that w
 
 To prepare the model for deployment, you will conduct following steps:
 
-* Query the model registry and list all the model versions:
+- Query the model registry and list all the model versions:
 
-* Hint
+- Hint
 
-* For the purpose of this lab, we will get the latest version of the model from the model registry. However, you can apply different filtering criterion such as listing approved models or get specific version of the model. Please refer to the [Model Registry ](https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html)documentation.
+- For the purpose of this lab, we will get the latest version of the model from the model registry. However, you can apply different filtering criterion such as listing approved models or get specific version of the model. Please refer to the [Model Registry ](https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html)documentation.
 
-* Define the endpoint configuration: Specify the name of one or more models in production (variants) and the ML compute instances that you want SageMaker to launch to host each production variant.
+- Define the endpoint configuration: Specify the name of one or more models in production (variants) and the ML compute instances that you want SageMaker to launch to host each production variant.
 
 ![](https://cdn-images-1.medium.com/max/3652/1*oWQn3XChAEIUyBvUzkoqgw.png)
 
@@ -630,31 +630,31 @@ If you have already executed the previous labs (Lab 1 and Lab 2) then you don’
 
 ## [Content](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#content)
 
-* [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#overview)
+- [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#overview)
 
-* [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#instructions)
+- [Instructions](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#instructions)
 
-* [Create Automated Machine Learning Pipeline](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#create-automated-machine-learning-pipeline)
+- [Create Automated Machine Learning Pipeline](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#create-automated-machine-learning-pipeline)
 
-* [Step 1 — Data Wrangler Preprocessing](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-1-data-wrangler-preprocessing)
+- [Step 1 — Data Wrangler Preprocessing](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-1-data-wrangler-preprocessing)
 
-* [Step 2 — Create Dataset and Train/Test Split](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-2-create-dataset-and-traintest-split)
+- [Step 2 — Create Dataset and Train/Test Split](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-2-create-dataset-and-traintest-split)
 
-* [Step 3 — Train XGBoost Model](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-3-train-xgboost-model)
+- [Step 3 — Train XGBoost Model](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-3-train-xgboost-model)
 
-* [Step 4 — Model Pre-Deployment Step](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-4-model-pre-deployment)
+- [Step 4 — Model Pre-Deployment Step](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-4-model-pre-deployment)
 
-* [Step 5 — Register Model](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-5-register-model)
+- [Step 5 — Register Model](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-5-register-model)
 
-* [Step 6 — Model deployment](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-6-model-deployment)
+- [Step 6 — Model deployment](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-6-model-deployment)
 
-* [Step 7 — Combine the Pipeline Steps](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-7-combine-the-pipeline-steps)
+- [Step 7 — Combine the Pipeline Steps](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#step-7-combine-the-pipeline-steps)
 
-* [Create the pipeline definition](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#create-the-pipeline-definition)
+- [Create the pipeline definition](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#create-the-pipeline-definition)
 
-* [Review the pipeline definition](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#review-the-pipeline-definition)
+- [Review the pipeline definition](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#review-the-pipeline-definition)
 
-* [Run the pipeline](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#run-the-pipeline)
+- [Run the pipeline](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#run-the-pipeline)
 
 ## [Overview](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/50-pipelines/51-pipelines#overview)
 
@@ -666,21 +666,21 @@ In previous labs, you built separate processes for data preparation, training, a
 
 **The machine learning workflow steps are outlined below:**
 
-* Step 1 — Data Wrangler Preprocessing ~2 min
+- Step 1 — Data Wrangler Preprocessing ~2 min
 
-* Step 2 — Create Dataset and Train/Test Split ~1 min
+- Step 2 — Create Dataset and Train/Test Split ~1 min
 
-* Step 3 — Train XGBoost Model ~1 min
+- Step 3 — Train XGBoost Model ~1 min
 
-* Step 4 — Model Pre-Deployment Step ~1 min
+- Step 4 — Model Pre-Deployment Step ~1 min
 
-* Step 5 — Register Model ~1 min
+- Step 5 — Register Model ~1 min
 
-* Step 6 — Model deployment ~1 min
+- Step 6 — Model deployment ~1 min
 
-* Step 7 — Combine and Run the Pipeline Steps ~1 min
+- Step 7 — Combine and Run the Pipeline Steps ~1 min
 
-* Run the pipeline ~15 mins
+- Run the pipeline ~15 mins
 
 Total run time ~ 23 mins.
 
@@ -742,11 +742,11 @@ Describing the pipeline status ensures that it has been created successfully. Vi
 
 Start a pipeline execution. Note this will take about 15 minutes to complete. You can watch the progress of the Pipeline Job on your SageMaker Studio Pipelines panel.
 
- 1. Click the Home folder pointed by the arrow and click on Pipelines.
+1.  Click the Home folder pointed by the arrow and click on Pipelines.
 
- 2. You will see the available pipelines in the table on the right.
+2.  You will see the available pipelines in the table on the right.
 
- 3. Click on FraudDetectDemo.
+3.  Click on FraudDetectDemo.
 
 ![](https://cdn-images-1.medium.com/max/3760/0*Wk1h61OJNRDhlCgW.png)
 
@@ -774,15 +774,15 @@ Click “Next” to go to the next section.
 
 In this workshop, you have learned how to:
 
-* Inspect, analyze and transform an auto insurance fraud dataset
+- Inspect, analyze and transform an auto insurance fraud dataset
 
-* Ingest transformed data into SageMaker Feature Store using the SageMaker Python SDK
+- Ingest transformed data into SageMaker Feature Store using the SageMaker Python SDK
 
-* Train an XGBoost model using SageMaker Training Jobs
+- Train an XGBoost model using SageMaker Training Jobs
 
-* Create a realtime endpoint for low latency requests using SageMaker
+- Create a realtime endpoint for low latency requests using SageMaker
 
-* Integrate all previous steps into an MLOps workflow with SageMaker Pipelines
+- Integrate all previous steps into an MLOps workflow with SageMaker Pipelines
 
 ## [Thank you!](https://catalog.workshops.aws/sagemaker-fraud-detection/en-US/60-summary#thank-you!)
 
@@ -796,39 +796,39 @@ If you are at an AWS event, such as re:Invent or an Immersion Day, and are using
 
 To clean up resources, please do the following:
 
- 1. Delete the CloudFormation stack to clean up the environment.
+1.  Delete the CloudFormation stack to clean up the environment.
 
- 2. Go to [CloudFormation ](https://console.aws.amazon.com/cloudformation/home)home page, click **Stacks **under the left hand side menu, select stack **fraud-detection-workshop **stack, and click **Delete** button to delete the stack.
+2.  Go to [CloudFormation ](https://console.aws.amazon.com/cloudformation/home)home page, click **Stacks **under the left hand side menu, select stack **fraud-detection-workshop **stack, and click **Delete** button to delete the stack.
 
 ![](https://cdn-images-1.medium.com/max/2542/0*AaMEUYVU3ewny4XM.png)
 
- 1. Delete the Model.
+1.  Delete the Model.
 
- 2. During Lab 4, we deleted the SageMaker hosted endpoint but not the model. We needed that model for Detect Bias bonus lab execution. Go to [SageMaker ](https://console.aws.amazon.com/sagemaker/home)home page and expand **Inference **in SageMaker dashboard section on left hand side menu. Click **Models**, and select **fraud-detect-model-xxxxxxxxxxxx**. Click **Action **button and select **Delete** option to delete the model.
+2.  During Lab 4, we deleted the SageMaker hosted endpoint but not the model. We needed that model for Detect Bias bonus lab execution. Go to [SageMaker ](https://console.aws.amazon.com/sagemaker/home)home page and expand **Inference **in SageMaker dashboard section on left hand side menu. Click **Models**, and select **fraud-detect-model-xxxxxxxxxxxx**. Click **Action **button and select **Delete** option to delete the model.
 
 ![](https://cdn-images-1.medium.com/max/2222/0*wTJmB_hvtFjUWXk4.png)
 
- 1. Delete the Endpoint Configuration.
+1.  Delete the Endpoint Configuration.
 
- 2. In SageMaker home page left hand side menu, expand **Inference** and click on **Endpoint configurations**. Select **fraud-detect-demo-endpoint-config-xxxxxxxxxxxx** configuration, click **Actions** button, and select **Delete** option to delete the configuration.
+2.  In SageMaker home page left hand side menu, expand **Inference** and click on **Endpoint configurations**. Select **fraud-detect-demo-endpoint-config-xxxxxxxxxxxx** configuration, click **Actions** button, and select **Delete** option to delete the configuration.
 
 ![](https://cdn-images-1.medium.com/max/2590/0*Gbm23iB3A-SXDbNj.png)
 
- 1. Delete the lifecycle configuration.
+1.  Delete the lifecycle configuration.
 
- 2. In SageMaker home page left hand side menu, click on **Lifecycle configurations**. Select **git-clone-step** lifecycle configuration and click **Delete** button to delete the lifecycle configuration.
+2.  In SageMaker home page left hand side menu, click on **Lifecycle configurations**. Select **git-clone-step** lifecycle configuration and click **Delete** button to delete the lifecycle configuration.
 
 ![](https://cdn-images-1.medium.com/max/2014/0*yTpyjpNt-WzGQQqY.png)
 
- 1. And, finally delete the S3 bucket.
+1.  And, finally delete the S3 bucket.
 
- 2. Go to [S3 ](https://console.aws.amazon.com/sagemaker/home). To delete the bucket, you need to first delete the objects inside the bucket. Click on **sagemaker — xxxxxxxxxxxx** bucket and select checkbox on the top of the object table to select all objects.
+2.  Go to [S3 ](https://console.aws.amazon.com/sagemaker/home). To delete the bucket, you need to first delete the objects inside the bucket. Click on **sagemaker — xxxxxxxxxxxx** bucket and select checkbox on the top of the object table to select all objects.
 
 ![](https://cdn-images-1.medium.com/max/2192/0*A9zT9wZCKX_6AcOD.png)
 
- 1. Click **Delete** button to delete all objects.
+1.  Click **Delete** button to delete all objects.
 
- 2. Navigate back to S3 buckets list, select **sagemaker — xxxxxxxxxxxx** bucket and click **Delete** button to delete the bucket.
+2.  Navigate back to S3 buckets list, select **sagemaker — xxxxxxxxxxxx** bucket and click **Delete** button to delete the bucket.
 
 ![](https://cdn-images-1.medium.com/max/2198/0*m2chZEcBnOJWuAtu.png)
 
@@ -842,22 +842,20 @@ Thank you.
 
 **Challenge 1: Real-Time Model Inference and Latency Optimization**
 
-* **Solution**: Leveraged API Gateway and Lambda to manage requests, reducing latency by preprocessing data in Lambda and only sending necessary data to SageMaker.
+- **Solution**: Leveraged API Gateway and Lambda to manage requests, reducing latency by preprocessing data in Lambda and only sending necessary data to SageMaker.
 
 **Challenge 2: Managing Security for Sensitive Data**
 
-* **Solution**: Used AWS Secrets Manager to secure sensitive information such as database credentials, API keys, and integrated with IAM to enforce role-based access control.
+- **Solution**: Used AWS Secrets Manager to secure sensitive information such as database credentials, API keys, and integrated with IAM to enforce role-based access control.
 
 **Challenge 3: Monitoring and Troubleshooting Complex Workflows**
 
-* **Solution**: Integrated CloudWatch, CloudTrail, and X-Ray to gain visibility into all workflow steps, allowing for efficient troubleshooting and resource optimization.
+- **Solution**: Integrated CloudWatch, CloudTrail, and X-Ray to gain visibility into all workflow steps, allowing for efficient troubleshooting and resource optimization.
 
 ## Conclusion
 
 This end-to-end solution highlights the power of Amazon SageMaker in handling real-time fraud detection and anomaly classification. By integrating AWS tools for automation, monitoring, and security, this project demonstrates an adaptable, high-performance architecture that can scale to meet growing data demands. The setup is versatile and supports businesses in proactive fraud management, ensuring fast, accurate, and secure anomaly detection for production-grade applications.
 
-Explore my [GitHub repository.](https://github.com/shubhammurti/AWS-Projects-Portfolio/)
+Explore my [GitHub repository.](https://github.com/MummanaPrabhat)
 
-> **Shubham Murti — Aspiring Cloud Security Engineer | Weekly Cloud Learning !!**
-
-**Let’s connect:** [Linkdin](http://www.linkedin.com/in/shubham-murti-b6486a1aa), [Twitter](https://x.com/murti_shubham), [Github](https://github.com/shubhammurti)
+**Let’s connect:** [Linkdin](https://www.linkedin.com/in/mummana-prabhat-381a57243/), [Github](https://github.com/MummanaPrabhat)
